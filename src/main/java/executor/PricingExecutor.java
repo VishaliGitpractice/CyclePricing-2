@@ -43,20 +43,21 @@ public class PricingExecutor {
 
     class Task implements Runnable {
         LocalDate date;
-        Map<String,String> comps;
+        Map<String,String> comps=new HashMap<>();
         Task(String line1, String line2) {
             this.date = LocalDate.parse(line1);
-            this.comps.put("chain",line2.split(",")[0]);
-            this.comps.put("frame",line2.split(",")[1]);
-            this.comps.put("handle",line2.split(",")[2]);
-            this.comps.put("seat",line2.split(",")[3]);
-            this.comps.put("wheel",line2.split(",")[4]);
+            comps.put("chain",line2.split(",")[0]);
+            comps.put("frame",line2.split(",")[1]);
+            comps.put("handle",line2.split(",")[2]);
+            comps.put("seat",line2.split(",")[3]);
+            comps.put("wheel",line2.split(",")[4]);
 
         }
         public void run() {
             CycleHelper helper = new CycleHelper();
             Cycle cycle = helper.getCycle(this.comps, this.date);
-            System.out.println("Date : "+this.date+"\tTotal Price : "+cycle.totalPrice());
+            cycle.totalPrice();
+            
         }
     }
 }
