@@ -69,8 +69,8 @@ public class CyclePricing {
 
                 CycleHelper helper = new CycleHelper();
                 Cycle cycle = helper.getCycle(map, date);
-
-                System.out.println("Total Price : "+cycle.totalPrice());
+                cycle.totalPrice();
+               
                 System.out.println("Please provide Date : ");
                 ip = input.readLine();
             }
