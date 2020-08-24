@@ -49,11 +49,13 @@ public class Cycle {
     }
 
     public Double totalPrice() {
-        System.out.println(" chain price : "+this.getChain().getTotalPrice());
-        System.out.println(" FramePrice : "+this.getFrame().getTotalPrice());
-        System.out.println(" HandleBarPrice : "+this.handleBar.getTotalPrice());
-        System.out.println(" SeatingPrice : "+this.getSeat().getTotalPrice());
-        System.out.println(" WheelPrice : "+this.wheel.getTotalPrice());
+        Double totalprice=this.getChain().getTotalPrice()+this.getFrame().getTotalPrice()+this.handleBar.getTotalPrice()+this.getSeat().getTotalPrice()+this.wheel.getTotalPrice();
+        System.out.println("chain price : "+this.getChain().getTotalPrice()+
+                        "\nFramePrice : "+this.getFrame().getTotalPrice()+
+                "\nHandleBarPrice : "+this.handleBar.getTotalPrice()+
+                "\nSeatingPrice : "+this.getSeat().getTotalPrice()+
+                "\nWheelPrice : "+this.wheel.getTotalPrice()+
+                "\nTotalPrice : "+totalprice+"\n");
         return this.getChain().getTotalPrice()+this.getFrame().getTotalPrice()+this.handleBar.getTotalPrice()+this.getSeat().getTotalPrice()+this.wheel.getTotalPrice();
     }
 }
